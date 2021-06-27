@@ -9,5 +9,9 @@ If you would like to make your own Instagram bot follow the following instructio
 1. Download this repository
 2. Open the index.py file in your favorite text editor. (You may use notepad)
 3. Replace the two variables ("YOURUSERNAME" and "YOURPASSWORD") with the username and password that you would like to use... Do not worry, this is stored locally on your device... It is not being sent anywhere.
-4. Run the "index.py" file however you would like. Personally, I run my files through the command line.
-5. It should be working! If you have any questions email me at Rangergraff@gmail.com
+4. Download a Chrome driver: https://chromedriver.chromium.org/downloads
+5. Place the download in the same file as your index.py file
+6. Run the "index.py" file however you would like. Personally, I run my files through the command line.
+7. It should be working!
+
+** If you have any questions email me at Rangergraff@gmail.com**
