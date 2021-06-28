@@ -118,7 +118,6 @@ class Bot:
 
         driver.get("https://www.instagram.com/")
         sleep(5)
-        #driver.find_element_by_xpath("/html/body/div[1]/section/main/article/div[2]/div[2]/div/p/a").click()
         driver.find_element_by_xpath("//input[@name=\"username\"]")\
             .send_keys(self.username)
         driver.find_element_by_xpath("//input[@name=\"password\"]")\
@@ -143,7 +142,6 @@ class Bot:
             # list of possible buttons... iterate through each and see if any has an innnerhtml of folow, requested... if none then print assumned following
             """
             possible_buttons = driver.find_elements_by_tag_name("button")
-            # possible_buttons = driver.findElement(By.xpath("//button[text()='LOGIN']"))
             """
             for j in possible_buttons:
                 Inner_Value = j.get_attribute("innerHTML")
@@ -159,7 +157,6 @@ class Bot:
                     print("Assumed following " + i)
                     # Instabot check if followed?
             """
-            # CHANGE to where it only prints once instead of len(possible_buttons) times
             btn_num = 0
             for j in possible_buttons:
                 Inner_Value = j.get_attribute("innerHTML")
@@ -174,4 +171,3 @@ class Bot:
                 else:
                     print("Checking Button #" + str(btn_num) + " on " + i + "'s page")
                     btn_num += 1
-                    # Instabot check if followed?
