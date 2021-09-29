@@ -12,27 +12,39 @@ json_data = json.load(json_file)
 
 """
 from datetime import datetime
-now = datetime.now()
-current_time = now.strftime("%H:%M:%S")
 
 
 running = True
 
 while running:
+
+    # Potential issue with this is that that it only does the first bots, and skips the last few... 
+    # this will only happn if there are a fucking shit ton of bots, but to fix this make 2 loops, the first one adds bot objects to a list, and the second runs them...
+    # I think this might be an issue at least...
+
     for i in json_data["Bot_Manifest"]:
-        if (i["last_post"] + i["post_time_delta"]) <= current_time:
+        
+        now = datetime.now()
+        current_time = now.strftime("%H:%M %d/%m/%Y")
+        last_post = datetime.strptime(i["last_post"], "%H:%M %d/%m/%Y")
+        
+        if (last_post + i["post_time_delta"]) <= current_time:
             return 0
 
             
-
+            now = datetime.now()
+            current_time = now.strftime("%H:%M %d/%m/%Y")
+            
             i["last_post"] = current_time
-            a_file = open("sample_file.json", "w")
+            a_file = open("Assets/Manifest.json", "w")
             json.dump(json_data, a_file)
             a_file.close()
 
             
-
-
+# Work on timing issue...
+# Try multiple bots at once...
+# Upload to Raspberry Pi
+# Work around Instagram Post... To make it headless, and maybe even get it to post multiple
 
 """
 
